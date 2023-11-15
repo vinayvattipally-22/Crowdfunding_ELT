@@ -4,6 +4,14 @@
 
 This repo contains our work for the second project of the UofT SCS edX Data Bootcamp: the ETL Mini Project.
 
+## Deliverables
+
+Notebook: [ETL_Mini_Project_TBarrera_AHallan_VVattipally_JZhang.ipynb](ETL_Mini_Project_TBarrera_AHallan_VVattipally_JZhang.ipynb)
+
+This notebook goes over the whole project from data cleaning and exploration to creating a Postgres database using `sqlalchemy`, creating the db tables and uploading the data to them, as well as querying them.
+
+However, you can also find the database schema that creates the tables in this file: [crowdfunding_db_schema.sql](crowdfunding_db_schema.sql)
+
 ---
 
 ## Dependencies
