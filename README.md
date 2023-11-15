@@ -1,6 +1,6 @@
 # Crowdfunding ELT Project
 
-**Team members:**  Tania Barrera, Archit Hallan, Vinay Vattipally & Jacky Zhang.
+**Team members:**  Tania Barrera, Vinay Vattipally, Jacky Zhang & Archit Hallan.
 
 This repo contains our work for the second project of the UofT SCS edX Data Bootcamp: the ETL Mini Project.
 
@@ -20,7 +20,6 @@ The rest of the modules should already be installed in your python environment, 
 
 - `pandas`
 - `numpy`
-- `datetime`
 - `json`
 - `sqlalchemy`
 
@@ -34,8 +33,7 @@ The last section of the project goes over database creation. This diagram shows 
 
 1. In addition to making sure all dependencies are installed before running the notebook, you should also make sure the data that will be added does not already exist in the database table. If it does, there will be an error due to the constraint that ensures unique primary keys.
 
-
-2. The contacts dataframe was cleaned using option 1 as described in the instructions (dictionary methods).
+2. The contacts dataframe was cleaned using option 1 as described in the instructions (i.e. dictionary methods).
 
 3. The schema uses the `Varchar` data type, since that is the PostgreSQL type. However, when using `sqlalchemy` to desclare and create the tables, we use the `String` object type for those columns.
 
