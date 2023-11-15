@@ -1,36 +1,35 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/gHsfjL
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 -- DB schema for the crowdfunding db
 
-CREATE TABLE "Contacts" (
+CREATE TABLE IF NOT EXISTS "Contacts" (
     "contact_id" Integer   NOT NULL,
     "first_name" Varchar(255)   NOT NULL,
     "last_name" Varchar(255)   NOT NULL,
     "email" Varchar(255)   NOT NULL,
     CONSTRAINT "pk_Contacts" PRIMARY KEY (
         "contact_id"
-     )
+    )
 );
 
-CREATE TABLE "Category" (
+CREATE TABLE IF NOT EXISTS "Category" (
     "category_id" Varchar(10)   NOT NULL,
     "category" Varchar(255)   NOT NULL,
     CONSTRAINT "pk_Category" PRIMARY KEY (
         "category_id"
-     )
+    )
 );
 
-CREATE TABLE "Subcategory" (
+CREATE TABLE IF NOT EXISTS "Subcategory" (
     "subcategory_id" Varchar(10)   NOT NULL,
     "subcategory" Varchar(255)   NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
         "subcategory_id"
-     )
+    )
 );
 
-CREATE TABLE "Campaign" (
+CREATE TABLE IF NOT EXISTS "Campaign" (
     "cf_id" Integer   NOT NULL,
     "contact_id" Integer   NOT NULL,
     "company_name" Varchar(255)   NOT NULL,
@@ -47,7 +46,7 @@ CREATE TABLE "Campaign" (
     "subcategory_id" Varchar(10)   NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (
         "cf_id"
-     )
+    )
 );
 
 ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_contact_id" FOREIGN KEY("contact_id")
@@ -58,4 +57,3 @@ REFERENCES "Category" ("category_id");
 
 ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "Subcategory" ("subcategory_id");
-
